@@ -1,5 +1,5 @@
 ﻿using System;
-using CQRSPres.Domain;
+using CQRS.Domain;
 using Raven.Client.Listeners;
 using Raven.Json.Linq;
 

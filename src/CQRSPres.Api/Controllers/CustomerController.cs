@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
+using CQRS.Domain;
 using CQRSPres.Api.Commands;
 using CQRSPres.Api.Query;
-using CQRSPres.Domain;
 
 namespace CQRSPres.Api.Controllers
 {

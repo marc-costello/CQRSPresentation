@@ -1,4 +1,4 @@
-﻿using CQRSPres.Domain;
+﻿using CQRS.Domain;
 using Raven.Client;
 
 namespace CQRSPres.Api.Commands
