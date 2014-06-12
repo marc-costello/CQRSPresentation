@@ -1,4 +1,4 @@
-﻿namespace CQRS.Domain
+﻿namespace CQRSPres.Domain
 {
 	public struct Address
 	{

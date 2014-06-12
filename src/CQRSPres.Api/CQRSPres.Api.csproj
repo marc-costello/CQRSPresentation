@@ -177,9 +177,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CQRS.Domain\CQRS.Domain.csproj">
+    <ProjectReference Include="..\CQRS.Domain\CQRSPres.Domain.csproj">
       <Project>{288C9911-B37E-4C1F-AC16-AF61B21D67DD}</Project>
-      <Name>CQRS.Domain</Name>
+      <Name>CQRSPres.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

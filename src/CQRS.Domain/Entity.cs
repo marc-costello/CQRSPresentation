@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CQRS.Domain
+namespace CQRSPres.Domain
 {
 	public abstract class Entity
 	{
