@@ -1,4 +1,5 @@
-﻿using CQRS.Domain;
+﻿using System;
+using CQRS.Domain;
 using Raven.Client;
 
 namespace CQRSPres.Api.Commands
@@ -19,9 +20,19 @@ namespace CQRSPres.Api.Commands
 		public override void Execute(IDocumentSession session)
 		{
 			var customer = session.Load<Customer>(_id);
-			customer.ChangePassword(_password);
+
+			try
+			{
+				customer.ChangePassword(_password);
+			}
+			catch (InvalidOperationException)
+			{
+				// Catch domain exceptions, set any error properties if needed.
+				return;
+			}
 
 			session.SaveChanges();
+			Success = true;
 		}
 	}
 }

@@ -33,6 +33,8 @@
 
 		public void ChangePassword(string password)
 		{
+			// Password validation - must be 6 chars long and include a number?
+			
 			Password = password;
 		}
 

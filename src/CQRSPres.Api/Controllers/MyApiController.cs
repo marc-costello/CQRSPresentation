@@ -2,6 +2,7 @@
 using System.Web.Http;
 using CQRSPres.Api.Commands;
 using CQRSPres.Api.Query;
+using Raven.Client;
 
 namespace CQRSPres.Api.Controllers
 {
@@ -15,6 +16,14 @@ namespace CQRSPres.Api.Controllers
 			using (var session = WebApiApplication.DocumentStore.OpenSession())
 			{
 				return query.Execute(session);
+			}
+		}
+
+		protected TResult Query<TResult>(Func<IDocumentSession, TResult> func)
+		{
+			using (var session = WebApiApplication.DocumentStore.OpenSession())
+			{
+				return func(session);
 			}
 		}
 
