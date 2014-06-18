@@ -4,6 +4,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using CQRSPres.Api.RavenListeners;
 using Raven.Client.Document;
+using Raven.Client.Embedded;
 
 namespace CQRSPres.Api
 {
@@ -13,7 +14,8 @@ namespace CQRSPres.Api
 		
 		protected void Application_Start()
 		{
-			DocumentStore = new DocumentStore { Url = "http://ravendb:8080", DefaultDatabase = "CQRSPres"};
+			//DocumentStore = new DocumentStore { Url = "http://ravendb:8080", DefaultDatabase = "CQRSPres"};
+			DocumentStore = new EmbeddableDocumentStore { DataDirectory = "Data", UseEmbeddedHttpServer = true};
 			DocumentStore.RegisterListener(new AuditableEntityListener());
 			DocumentStore.Initialize();
 			Application["DocumentStore"] = DocumentStore;

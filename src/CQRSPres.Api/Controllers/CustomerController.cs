@@ -29,9 +29,9 @@ namespace CQRSPres.Api.Controllers
 		}
 
 		// POST api/customer
-		public void Post()
+		public void Post(CustomerDto dto)
 		{
-			var command = new AddCustomerCommand("marc.costello@tombola.com", "abc123");
+			var command = new AddCustomerCommand(dto.Email, dto.Password);
 			try
 			{
 				ExecuteCommand(command);
